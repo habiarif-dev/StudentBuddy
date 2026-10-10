@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentBuddy | Student Organizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">🎓 StudentBuddy</a>
+    <span class="tagline">Study smarter. Stay organized.</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR STUDENT WORKSPACE</p>
+        <h1>Let's get things done.</h1>
+        <p>Keep track of your tasks, deadlines, and exams in one place.</p>
+      </div>
+      <div class="date-badge" id="todayDate"></div>
+    </section>
+
+    <!-- Progress dashboard -->
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-icon">📚</span>
+        <p>Total tasks</p>
+        <h2 id="totalTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">⏳</span>
+        <p>Pending tasks</p>
+        <h2 id="pendingTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">✅</span>
+        <p>Completed tasks</p>
+        <h2 id="completedTasks">0</h2>
+      </article>
+    </section>
+
+    <section class="progress-panel">
+      <div class="section-heading">
+        <h2>My progress</h2>
+        <span id="progressText">0% completed</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <div class="main-grid">
+      <!-- Task manager and deadline tracker -->
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">STAY ON TRACK</p>
+            <h2>My tasks</h2>
+          </div>
+          <span class="pill">Assignments & projects</span>
+        </div>
+
+        <form id="taskForm" class="form">
+          <label for="taskTitle">Task name</label>
+          <input
+            id="taskTitle"
+            type="text"
+            placeholder="e.g. Prepare OS presentation"
+            maxlength="120"
+            required
+          >
+
+          <div class="form-row">
+            <div>
+              <label for="taskCategory">Category</label>
+              <select id="taskCategory">
+                <option value="Assignment">Assignment</option>
+                <option value="Project">Project</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+              </select>
+            </div>
+            <div>
+              <label for="taskDeadline">Due date</label>
+              <input id="taskDeadline" type="date">
+            </div>
+          </div>
+
+          <button class="primary-button" type="submit">+ Add task</button>
+        </form>
+
+        <div class="list-heading">
+          <h3>Your task list</h3>
+          <span id="taskCountLabel">0 tasks</span>
+        </div>
+        <div id="taskList" class="item-list"></div>
+      </section>
+
+      <!-- Exam planner -->
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">BE PREPARED</p>
+            <h2>Exam planner</h2>
+          </div>
+          <span class="pill">Exam schedule</span>
+        </div>
+
+        <form id="examForm" class="form">
+          <label for="examSubject">Subject name</label>
+          <input
+            id="examSubject"
+            type="text"
+            placeholder="e.g. Operating Systems"
+            maxlength="100"
+            required
+          >
+
+          <label for="examDate">Exam date</label>
+          <input id="examDate" type="date" required>
+
+          <button class="primary-button" type="submit">+ Add exam</button>
+        </form>
+
+        <div class="list-heading">
+          <h3>Upcoming exams</h3>
+          <span id="examCountLabel">0 exams</span>
+        </div>
+        <div id="examList" class="item-list"></div>
+      </section>
+    </div>
+
+    <!-- Upcoming deadlines -->
+    <section class="panel deadlines-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WHAT'S NEXT?</p>
+          <h2>Upcoming deadlines</h2>
+        </div>
+      </div>
+      <div id="deadlineList" class="item-list"></div>
+    </section>
+
+    <p class="footer-note">
+      Made for students, one task at a time. 💜
+    </p>
+  </main>
+</body>
+</html>
